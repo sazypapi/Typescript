@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 async function main() {
   for (const product of products) {
-    await prisma.Product.create({
+    await prisma.product.create({
       data: product,
     });
   }
@@ -18,3 +18,4 @@ main()
     await prisma.$disconnect();
     process.exit(1);
   });
+  
