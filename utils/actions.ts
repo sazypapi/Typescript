@@ -236,7 +236,7 @@ export const fetchUserFavorites = async () => {
 };
 export const createReviewAction = async (
   prevState: any,
-  formData = FormData
+  formData : FormData
 ) => {
   const user = await getAuthUser();
   try {
@@ -251,7 +251,7 @@ export const createReviewAction = async (
     revalidatePath(`/products/${validatedFields.productId}`);
     return { message: "review submitted successfully" };
   } catch (error) {
-    renderError(error);
+    return renderError(error);
   }
 };
 export const fetchProductReviews = async (productId: string) => {
@@ -504,7 +504,7 @@ export const removeCartItemAction = async (
     revalidatePath("/cart");
     return { message: "Item removed from cart" };
   } catch (error) {
-    renderError(error);
+    return renderError(error);
   }
 };
 
@@ -534,7 +534,7 @@ export const updateCartItemAction = async ({
     revalidatePath("/cart");
     return { message: "cart updated" };
   } catch (error) {
-    renderError(error);
+   return renderError(error);
   }
 };
 
@@ -567,7 +567,7 @@ export const createOrderAction = async (prevState: any, formData: FormData) => {
     });
     orderId = order.id;
   } catch (error) {
-    renderError(error);
+    return renderError(error);
   }
   redirect(`/checkout?orderId=${orderId}&cartId=${cartId}`);
 };
