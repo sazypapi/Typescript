@@ -20,11 +20,18 @@ function NavSearch() {
     }
     replace(`/products?${params.toString()}`);
   }, 500);
+  // useEffect(() => {
+  //   if (!searchParams.get("search")) {
+  //     setSearch("");
+  //   }
+  // }, [searchParams.get("search")]);
+  const searchValue = searchParams.get("search");
+
   useEffect(() => {
-    if (!searchParams.get("search")) {
-      setSearch("");
-    }
-  }, [searchParams.get("search")]);
+  if (!searchValue) {
+    setSearch("");
+  }
+}, [searchValue]);
   return (
     <div>
       <Input

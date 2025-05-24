@@ -22,7 +22,7 @@ function CheckOutPage() {
       cartId,
     });
     return response.data.clientSecret;
-  }, []);
+  }, [orderId,cartId]);
   const options = { fetchClientSecret };
   return (
     <div id="checkout">
