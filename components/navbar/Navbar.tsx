@@ -9,7 +9,7 @@ import LinksDropdown from "./LinksDropdown";
 function Navbar() {
   return (
     <nav className="border-b ">
-      <Containers className="flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap py-8">
+      <Containers className="flex flex-col space-y-2 sm:flex-row sm:justify-between sm:items-center flex-wrap py-8 ">
         <Logo />
         <Suspense>
           <NavSearch />

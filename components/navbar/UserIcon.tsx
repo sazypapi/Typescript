@@ -13,7 +13,7 @@ async function UserIcon() {
     );
   }
   return (
-    <LuUser className="h-6 w-6 rounded-full bg-primary text-secondary"></LuUser>
+    <LuUser className="h-6 w-6 rounded-full bg-primary text-gray-300"></LuUser>
   );
 }
 
